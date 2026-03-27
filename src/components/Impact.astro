@@ -1,0 +1,115 @@
+---
+const impacts = [
+  {
+    type: 'User Story',
+    badgeColor: '#4f46e5',
+    badgeBg: 'rgba(79,70,229,0.08)',
+    title: '강남 파티룸 "온" 점주',
+    content: '부업으로 운영 중인데, 원그라운드 AI 덕분에 본업 중에도 예약 응대 걱정이 사라졌습니다. 고객 만족도도 훨씬 높아졌어요.',
+    footer: '운영 시간 75% 감소',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>`
+  },
+  {
+    type: 'YouTube',
+    badgeColor: '#ef4444',
+    badgeBg: 'rgba(239,68,68,0.08)',
+    title: 'IT 트렌드 채널 출연',
+    content: '구독자 10만 채널에서 무인 공간 AI 자동화의 미래를 소개했습니다. 1인 기업의 생산성 혁신에 대해 깊이 있게 다뤘습니다.',
+    footer: '조회수 5만회 달성',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>`
+  },
+  {
+    type: 'Lecture',
+    badgeColor: '#d97706',
+    badgeBg: 'rgba(217,119,6,0.08)',
+    title: 'S기업 임원 특강',
+    content: '대기업 임원진을 대상으로 "생성형 AI 기반 비즈니스 효율화" 세션을 진행하며 현장 업무에 즉시 적용 가능한 전략을 전파했습니다.',
+    footer: '만족도 4.9/5.0',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>`
+  },
+  {
+    type: 'User Story',
+    badgeColor: '#4f46e5',
+    badgeBg: 'rgba(79,70,229,0.08)',
+    title: '스터디카페 "더그라운드"',
+    content: '단순 반복 업무가 80% 줄어드니 신규 지점 확장과 마케팅에 에너지를 쏟을 수 있게 되었습니다. 성장의 확실한 파트너입니다.',
+    footer: '매출 35% 동반 상승',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`
+  },
+  {
+    type: 'YouTube',
+    badgeColor: '#ef4444',
+    badgeBg: 'rgba(239,68,68,0.08)',
+    title: 'AI 아키텍트 인터뷰',
+    content: '퍼스널 브랜딩과 AI 도구 활용법을 다룬 인터뷰가 공개되었습니다. 기술을 넘어 비즈니스 가치를 만드는 법에 집중합니다.',
+    footer: '인기 급상승 영상 선정',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`
+  },
+  {
+    type: 'Lecture',
+    badgeColor: '#d97706',
+    badgeBg: 'rgba(217,119,6,0.08)',
+    title: 'KDT AI 클래스 운영',
+    content: '국비지원 AI 교육 과정에서 파이썬 기반 자동화 툴 제작 실습을 리드하며, 50여 명의 예비 AI 실무자를 양성하고 있습니다.',
+    footer: '교육생 취업률 80% 목표',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`
+  }
+];
+---
+
+<section id="impact" style="padding: 8rem 1.5rem; background: #f8f9fc; position: relative; overflow: hidden;">
+  <div class="bg-dots" style="position: absolute; inset: 0; z-index: 0; opacity: 0.6;"></div>
+  
+  <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+    <div class="reveal" style="text-align: center; margin-bottom: 4.5rem;">
+      <span class="section-label" style="display: inline-flex; margin-bottom: 1.25rem;">신뢰와 영향력</span>
+      <h2 style="font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.15; margin-top: 1.25rem; color: #0f172a;">
+        검증된 전문성, <span class="gradient-text">현장의 증명</span>
+      </h2>
+      <p style="font-size: 1.1rem; color: #64748b; margin-top: 1rem; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+        운영자들의 생생한 후기부터 주요 매체 출연 정보까지,<br />원그라운드의 가치는 현장에서 만들어집니다.
+      </p>
+    </div>
+
+    <!-- Impact Cards Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
+      {impacts.map((item, i) => (
+        <article 
+          class={`card card-hover reveal reveal-delay-${(i % 3) + 1}`}
+          style="background: white; border-radius: 1.5rem; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;"
+        >
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+              <span style={`font-size: 0.7rem; font-weight: 800; color: ${item.badgeColor}; background: ${item.badgeBg}; padding: 0.25rem 0.75rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;`}>
+                {item.type}
+              </span>
+              <div style={`color: ${item.badgeColor}; opacity: 0.8;`}>
+                <Fragment set:html={item.icon} />
+              </div>
+            </div>
+            
+            <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem; letter-spacing: -0.02em;">
+              {item.title}
+            </h3>
+            <p style="font-size: 0.95rem; color: #475569; line-height: 1.7; margin-bottom: 1.5rem;">
+              "{item.content}"
+            </p>
+          </div>
+
+          <div style="padding-top: 1.25rem; border-top: 1px solid rgba(0,0,0,0.06); display: flex; align-items: center; gap: 0.5rem;">
+            <div style={`width: 8px; height: 8px; background: ${item.badgeColor}; border-radius: 50%;`}></div>
+            <span style="font-size: 0.85rem; font-weight: 700; color: #1e293b;">{item.footer}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 640px) {
+    div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

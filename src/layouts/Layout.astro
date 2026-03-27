@@ -1,0 +1,163 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = '원그라운드(One Ground) | AI 비즈니스 아키텍트 & SaaS 솔루션',
+  description = '현장의 문제를 AI로 해결합니다. 무인 공간 CRM·자동화 SaaS부터 AI 실무 강의까지—원그라운드가 공간 경영의 미래를 만듭니다.'
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="무인공간 AI,파티룸 자동화,공간 경영 SaaS,AI 비즈니스,원그라운드,AI 강의,DX 컨설팅" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="원그라운드 (One Ground)" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+
+    <!-- JSON-LD Schema: Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "원그라운드 (One Ground)",
+        "alternateName": "One Ground",
+        "description": "현장의 문제를 AI로 해결하는 AI 비즈니스 아키텍트. 무인 공간 CRM·자동화 SaaS, 공간 운영 테스트베드, 기업 AI 실무 강의를 제공합니다.",
+        "url": "https://oneground.ai.kr",
+        "sameAs": [],
+        "knowsAbout": ["AI 자동화", "SaaS", "무인 공간 CRM", "공간 경영", "AI 실무 강의", "디지털 전환"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "원그라운드 서비스",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "무인 공간 AI CRM & 자동화 SaaS",
+              "description": "파티룸, 스터디카페 등 무인 공간을 위한 AI 기반 CRM 및 운영 자동화 솔루션"
+            },
+            {
+              "@type": "Offer",
+              "name": "AI 실무 강의 & DX 컨설팅",
+              "description": "기업, 공공기관, 교육기관 대상 AI 실무 교육 및 디지털 전환 전략 강의"
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- JSON-LD Schema: SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "원그라운드 AI SaaS",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "무인 공간(파티룸, 스터디카페) 운영자를 위한 AI 기반 CRM 및 업무 자동화 SaaS 솔루션. 예약 관리, 고객 응대, 매출 분석을 AI가 자동으로 처리합니다.",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/PreOrder",
+          "price": "0",
+          "priceCurrency": "KRW",
+          "description": "현재 사전 예약 신청 진행 중"
+        },
+        "featureList": [
+          "AI 기반 예약 관리 자동화",
+          "고객 CRM 및 응대 자동화",
+          "매출 및 운영 데이터 분석 대시보드",
+          "실시간 공간 모니터링"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+
+    <!-- Scroll Reveal Script -->
+    <script>
+      const revealElements = document.querySelectorAll('.reveal');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      revealElements.forEach(el => observer.observe(el));
+
+      // Counter animation
+      const counters = document.querySelectorAll('[data-count]');
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+            entry.target.classList.add('counted');
+            const target = parseInt(entry.target.dataset.count || '0');
+            const suffix = entry.target.dataset.suffix || '';
+            const prefix = entry.target.dataset.prefix || '';
+            let current = 0;
+            const increment = target / 60;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                entry.target.textContent = prefix + target.toLocaleString() + suffix;
+                clearInterval(timer);
+              } else {
+                entry.target.textContent = prefix + Math.floor(current).toLocaleString() + suffix;
+              }
+            }, 20);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(el => counterObserver.observe(el));
+
+      // Navbar scroll effect
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar?.classList.add('scrolled');
+        } else {
+          navbar?.classList.remove('scrolled');
+        }
+      });
+    </script>
+
+    <style>
+      #navbar.scrolled {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0,0,0,0.07);
+        box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      }
+    </style>
+  </body>
+</html>

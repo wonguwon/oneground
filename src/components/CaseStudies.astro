@@ -1,0 +1,131 @@
+---
+const cases = [
+  {
+    category: '공간 운영 자동화',
+    categoryColor: '#4f46e5',
+    categoryBg: 'rgba(79,70,229,0.07)',
+    categoryBorder: 'rgba(79,70,229,0.15)',
+    accentColor: '#4f46e5',
+    title: '예약 자동화로 운영 시간 80% 절감',
+    desc: '파티룸 운영에 AI 예약 응대 봇 및 자동 정산 시스템을 도입한 후, 일일 업무 시간이 6시간에서 1.2시간으로 대폭 줄었습니다.',
+    metrics: [
+      { label: '운영 시간 절감', value: '80', suffix: '%' },
+      { label: '고객 응대 자동화', value: '95', suffix: '%' },
+    ],
+  },
+  {
+    category: 'AI SaaS ROI',
+    categoryColor: '#059669',
+    categoryBg: 'rgba(5,150,105,0.07)',
+    categoryBorder: 'rgba(5,150,105,0.15)',
+    accentColor: '#059669',
+    title: '월 매출 40% 증가, AI 추천 기반 리마케팅',
+    desc: '고객 CRM 데이터를 AI로 분석해 이탈 예정 고객에게 개인화 리마케팅 메시지를 자동 발송. 재방문율과 매출이 동시에 상승했습니다.',
+    metrics: [
+      { label: '월 매출 증가', value: '40', suffix: '%↑' },
+      { label: '재방문율 향상', value: '2.3', suffix: 'x' },
+    ],
+  },
+  {
+    category: '강의 영향력',
+    categoryColor: '#d97706',
+    categoryBg: 'rgba(217,119,6,0.07)',
+    categoryBorder: 'rgba(217,119,6,0.15)',
+    accentColor: '#d97706',
+    title: '기업 AI 강의 수강생 500명 돌파',
+    desc: '공공기관 및 기업 대상 AI 실무 활용 강의를 진행하며 수강생 500명을 달성. 평균 만족도 97점의 고평가를 받았습니다.',
+    metrics: [
+      { label: '누적 수강생', value: '500', suffix: '명+' },
+      { label: '강의 만족도', value: '97', suffix: '점' },
+    ],
+  },
+  {
+    category: '비용 최적화',
+    categoryColor: '#0891b2',
+    categoryBg: 'rgba(8,145,178,0.07)',
+    categoryBorder: 'rgba(8,145,178,0.15)',
+    accentColor: '#0891b2',
+    title: '인건비 대비 AI 운영으로 비용 절감',
+    desc: '파트타임 직원 의존에서 AI 자동화 체제로 전환 후 고정 운영 비용 40% 감소, 오류율 95% 이상 감소했습니다.',
+    metrics: [
+      { label: '운영 비용 절감', value: '40', suffix: '%' },
+      { label: '오류율 감소', value: '95', suffix: '%+' },
+    ],
+  },
+];
+---
+
+<section id="cases" style="padding: 8rem 1.5rem; background: #ffffff; position: relative; overflow: hidden;">
+  <div class="orb" style="width: 500px; height: 500px; top: -5%; left: -8%; background: radial-gradient(circle, rgba(79,70,229,0.07) 0%, transparent 70%);"></div>
+
+  <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+    <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
+      <span class="section-label" style="display: inline-flex; margin-bottom: 1.25rem;">케이스 스터디</span>
+      <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.15; margin-top: 1.25rem; color: #0f172a;">
+        데이터로 증명하는 <span class="gradient-text">AI 혁신</span>
+      </h2>
+      <p style="font-size: 1.05rem; color: #64748b; margin-top: 1rem; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+        추상적 비전이 아닌, 실제 현장에서 검증된 수치입니다.
+      </p>
+    </div>
+
+    <!-- AEO FAQ -->
+    <div class="reveal" style="background: #f8f9fc; border: 1px solid rgba(0,0,0,0.07); border-radius: 1.25rem; padding: 1.5rem 2rem; margin-bottom: 3rem;">
+      <p style="font-size: 0.78rem; font-weight: 700; color: #6d28d9; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">자주 묻는 질문 (FAQ)</p>
+      <details style="margin-bottom: 0.75rem; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 0.75rem;">
+        <summary style="color: #0f172a; font-weight: 600; cursor: pointer; font-size: 0.95rem; padding: 0.25rem 0; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          무인 공간 AI 자동화란 무엇인가요?
+          <span style="color: #6d28d9; font-size: 1.2rem; flex-shrink: 0;">+</span>
+        </summary>
+        <p style="color: #475569; margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.75;">무인 공간 AI 자동화는 파티룸, 스터디카페 등의 예약, 고객 응대, 매출 정산, 공간 모니터링을 AI가 자동으로 처리하는 기술입니다. 원그라운드는 실제 운영 현장 데이터를 기반으로 이 솔루션을 개발·검증합니다.</p>
+      </details>
+      <details>
+        <summary style="color: #0f172a; font-weight: 600; cursor: pointer; font-size: 0.95rem; padding: 0.25rem 0; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          원그라운드 AI SaaS는 어떤 효과가 있나요?
+          <span style="color: #6d28d9; font-size: 1.2rem; flex-shrink: 0;">+</span>
+        </summary>
+        <p style="color: #475569; margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.75;">실증 데이터 기준 운영 시간 80% 절감, 운영 비용 40% 감소, 고객 재방문율 2.3배 향상을 달성했습니다. 현재 사전 예약 신청을 통해 얼리어답터 혜택을 누릴 수 있습니다.</p>
+      </details>
+    </div>
+
+    <!-- Case Cards -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.25rem;">
+      {cases.map((c, i) => (
+        <article
+          class={`card card-hover reveal reveal-delay-${(i % 4) + 1}`}
+          style="border-radius: 1.25rem; padding: 1.875rem; position: relative; overflow: hidden;"
+        >
+          <!-- Top color bar -->
+          <div style={`position: absolute; top: 0; left: 0; right: 0; height: 3px; background: ${c.accentColor}; border-radius: 1.25rem 1.25rem 0 0;`}></div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <span style={`font-size: 0.72rem; font-weight: 700; color: ${c.categoryColor}; background: ${c.categoryBg}; border: 1px solid ${c.categoryBorder}; padding: 0.2rem 0.75rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.06em;`}>
+              {c.category}
+            </span>
+          </div>
+
+          <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; line-height: 1.4; margin-bottom: 0.875rem; letter-spacing: -0.015em;">{c.title}</h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.7; margin-bottom: 1.5rem;">{c.desc}</p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.06);">
+            {c.metrics.map(m => (
+              <div>
+                <div style={`font-size: 1.65rem; font-weight: 900; color: ${c.accentColor}; letter-spacing: -0.03em; line-height: 1;`}>
+                  <span data-count={m.value.replace(/[^0-9.]/g,'')} data-suffix={m.value.replace(/[0-9.]/g,'') + m.suffix}>
+                    {m.value}{m.suffix}
+                  </span>
+                </div>
+                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.3rem; font-weight: 500;">{m.label}</div>
+              </div>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary span:last-child { transform: rotate(45deg); display: inline-block; transition: transform 0.2s; }
+</style>
