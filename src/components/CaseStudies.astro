@@ -1,56 +1,48 @@
 ---
-const cases = [
+const beforeAfter = [
   {
-    category: '공간 운영 자동화',
-    categoryColor: '#4f46e5',
-    categoryBg: 'rgba(79,70,229,0.07)',
-    categoryBorder: 'rgba(79,70,229,0.15)',
-    accentColor: '#4f46e5',
-    title: '예약 자동화로 운영 시간 80% 절감',
-    desc: '파티룸 운영에 AI 예약 응대 봇 및 자동 정산 시스템을 도입한 후, 일일 업무 시간이 6시간에서 1.2시간으로 대폭 줄었습니다.',
-    metrics: [
-      { label: '운영 시간 절감', value: '80', suffix: '%' },
-      { label: '고객 응대 자동화', value: '95', suffix: '%' },
-    ],
+    icon: '🤖',
+    label: 'AI 챗봇 응대',
+    before: '야간 미응대',
+    after: '24h 자동 처리',
+    metric: '85%+',
+    metricLabel: '문의 자동화율',
+    color: '#4f46e5',
+    bg: 'rgba(79,70,229,0.07)',
+    border: 'rgba(79,70,229,0.14)',
   },
   {
-    category: 'AI SaaS ROI',
-    categoryColor: '#059669',
-    categoryBg: 'rgba(5,150,105,0.07)',
-    categoryBorder: 'rgba(5,150,105,0.15)',
-    accentColor: '#059669',
-    title: '월 매출 40% 증가, AI 추천 기반 리마케팅',
-    desc: '고객 CRM 데이터를 AI로 분석해 이탈 예정 고객에게 개인화 리마케팅 메시지를 자동 발송. 재방문율과 매출이 동시에 상승했습니다.',
-    metrics: [
-      { label: '월 매출 증가', value: '40', suffix: '%↑' },
-      { label: '재방문율 향상', value: '2.3', suffix: 'x' },
-    ],
+    icon: '📱',
+    label: '예약 확인 문자',
+    before: '수동 발송',
+    after: '완전 자동화',
+    metric: '0건',
+    metricLabel: '수동 발송',
+    color: '#059669',
+    bg: 'rgba(5,150,105,0.07)',
+    border: 'rgba(5,150,105,0.14)',
   },
   {
-    category: '강의 영향력',
-    categoryColor: '#d97706',
-    categoryBg: 'rgba(217,119,6,0.07)',
-    categoryBorder: 'rgba(217,119,6,0.15)',
-    accentColor: '#d97706',
-    title: '기업 AI 강의 수강생 500명 돌파',
-    desc: '공공기관 및 기업 대상 AI 실무 활용 강의를 진행하며 수강생 500명을 달성. 평균 만족도 97점의 고평가를 받았습니다.',
-    metrics: [
-      { label: '누적 수강생', value: '500', suffix: '명+' },
-      { label: '강의 만족도', value: '97', suffix: '점' },
-    ],
+    icon: '🚫',
+    label: '노쇼 발생률',
+    before: '대응 불가',
+    after: 'D-1·당일 자동 알림',
+    metric: '↓60%',
+    metricLabel: '노쇼 감소',
+    color: '#d97706',
+    bg: 'rgba(217,119,6,0.07)',
+    border: 'rgba(217,119,6,0.14)',
   },
   {
-    category: '비용 최적화',
-    categoryColor: '#0891b2',
-    categoryBg: 'rgba(8,145,178,0.07)',
-    categoryBorder: 'rgba(8,145,178,0.15)',
-    accentColor: '#0891b2',
-    title: '인건비 대비 AI 운영으로 비용 절감',
-    desc: '파트타임 직원 의존에서 AI 자동화 체제로 전환 후 고정 운영 비용 40% 감소, 오류율 95% 이상 감소했습니다.',
-    metrics: [
-      { label: '운영 비용 절감', value: '40', suffix: '%' },
-      { label: '오류율 감소', value: '95', suffix: '%+' },
-    ],
+    icon: '⏱️',
+    label: '일일 운영 시간',
+    before: '6시간+',
+    after: '1.2시간',
+    metric: '80%',
+    metricLabel: '업무 시간 절감',
+    color: '#0891b2',
+    bg: 'rgba(8,145,178,0.07)',
+    border: 'rgba(8,145,178,0.14)',
   },
 ];
 ---
@@ -62,65 +54,103 @@ const cases = [
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
       <span class="section-label" style="display: inline-flex; margin-bottom: 1.25rem;">케이스 스터디</span>
       <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.15; margin-top: 1.25rem; color: #0f172a;">
-        데이터로 증명하는 <span class="gradient-text">AI 혁신</span>
+        직접 운영한 파티룸에서 <span class="gradient-text">먼저 검증했습니다</span>
       </h2>
-      <p style="font-size: 1.05rem; color: #64748b; margin-top: 1rem; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.7;">
-        추상적 비전이 아닌, 실제 현장에서 검증된 수치입니다.
+      <p style="font-size: 1.05rem; color: #64748b; margin-top: 1rem; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+        스페이스데스크는 자체 운영 중인 <strong style="color: #0f172a;">게임파티룸 밤샘</strong>에 가장 먼저 적용하여<br />실제 운영 데이터로 성능을 검증했습니다.
       </p>
     </div>
 
+    <!-- Case Study Main Card -->
+    <div
+      class="card reveal"
+      style="border-radius: 2rem; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 8px 48px rgba(0,0,0,0.09);"
+    >
+      <!-- Header -->
+      <div style="padding: 2.5rem 3rem; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(109,40,217,0.3) 0%, transparent 70%); pointer-events: none;"></div>
+        <div style="position: absolute; bottom: -40px; left: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(79,70,229,0.25) 0%, transparent 70%); pointer-events: none;"></div>
+        <div style="position: relative; z-index: 1; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+          <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #4f46e5, #8b5cf6); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(79,70,229,0.4); font-size: 1.75rem; flex-shrink: 0;">
+            🎮
+          </div>
+          <div>
+            <p style="font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem;">파일럿 사업장 · 스페이스데스크 도입 전·후</p>
+            <h3 style="font-size: 1.75rem; font-weight: 900; color: white; letter-spacing: -0.03em; line-height: 1.15;">게임파티룸 밤샘</h3>
+            <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-top: 0.25rem;">소규모 1인 운영 파티룸 · 스페이스데스크 직접 적용 검증</p>
+          </div>
+          <div style="margin-left: auto; display: flex; gap: 0.625rem; flex-wrap: wrap;">
+            {['RAG 챗봇', '자동 문자', '예약 CRM'].map(t => (
+              <span style="font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 0.25rem 0.75rem; border-radius: 9999px; letter-spacing: 0.06em;">{t}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Before / After Grid -->
+      <div style="padding: 2.5rem 3rem; background: white;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+          {beforeAfter.map((item, i) => (
+            <div
+              class={`reveal reveal-delay-${i + 1}`}
+              style={`background: #f8f9fc; border: 1px solid rgba(0,0,0,0.06); border-radius: 1.25rem; padding: 1.5rem; position: relative; overflow: hidden;`}
+            >
+              <div style={`position: absolute; top: 0; left: 0; right: 0; height: 3px; background: ${item.color}; border-radius: 1.25rem 1.25rem 0 0;`}></div>
+              <div style="font-size: 1.4rem; margin-bottom: 0.625rem;">{item.icon}</div>
+              <p style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.875rem;">{item.label}</p>
+
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <div style="flex: 1; text-align: center; padding: 0.625rem; background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.12); border-radius: 0.625rem;">
+                  <p style="font-size: 0.65rem; color: #ef4444; font-weight: 700; text-transform: uppercase; margin-bottom: 0.2rem;">도입 전</p>
+                  <p style="font-size: 0.85rem; font-weight: 700; color: #1e293b;">{item.before}</p>
+                </div>
+                <div style="color: #cbd5e1; font-size: 1rem;">→</div>
+                <div style="flex: 1; text-align: center; padding: 0.625rem; background: rgba(5,150,105,0.05); border: 1px solid rgba(5,150,105,0.14); border-radius: 0.625rem;">
+                  <p style="font-size: 0.65rem; color: #059669; font-weight: 700; text-transform: uppercase; margin-bottom: 0.2rem;">도입 후</p>
+                  <p style="font-size: 0.85rem; font-weight: 700; color: #1e293b;">{item.after}</p>
+                </div>
+              </div>
+
+              <div style={`display: flex; align-items: center; gap: 0.5rem; padding-top: 0.875rem; border-top: 1px solid rgba(0,0,0,0.06);`}>
+                <span style={`font-size: 1.25rem; font-weight: 900; color: ${item.color}; letter-spacing: -0.03em;`}>
+                  <span data-count={item.metric.replace(/[^0-9]/g,'')} data-suffix={item.metric.replace(/[0-9]/g,'')}>{item.metric}</span>
+                </span>
+                <span style="font-size: 0.75rem; color: #64748b; font-weight: 500;">{item.metricLabel}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Quote -->
+        <div class="reveal" style="margin-top: 2rem; padding: 1.75rem 2rem; background: linear-gradient(135deg, rgba(79,70,229,0.04), rgba(139,92,246,0.04)); border: 1px solid rgba(79,70,229,0.12); border-radius: 1.25rem; display: flex; align-items: flex-start; gap: 1rem;">
+          <div style="font-size: 2.5rem; line-height: 1; color: #8b5cf6; opacity: 0.5; flex-shrink: 0; font-family: Georgia, serif;">"</div>
+          <div>
+            <p style="font-size: 1rem; color: #334155; line-height: 1.75; font-style: italic;">
+              스페이스데스크는 제가 직접 운영하는 파티룸에서 먼저 검증했습니다. 야간에 쌓이던 미답 문의, 수동으로 하나씩 보내던 예약 확인 문자—이 모든 것이 자동화되니 비로소 운영자가 쉴 수 있게 되었습니다.
+            </p>
+            <p style="font-size: 0.825rem; font-weight: 700; color: #6d28d9; margin-top: 0.75rem;">— 원그라운드 대표 · 게임파티룸 밤샘 운영자</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- AEO FAQ -->
-    <div class="reveal" style="background: #f8f9fc; border: 1px solid rgba(0,0,0,0.07); border-radius: 1.25rem; padding: 1.5rem 2rem; margin-bottom: 3rem;">
+    <div class="reveal" style="background: #f8f9fc; border: 1px solid rgba(0,0,0,0.07); border-radius: 1.25rem; padding: 1.5rem 2rem;">
       <p style="font-size: 0.78rem; font-weight: 700; color: #6d28d9; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">자주 묻는 질문 (FAQ)</p>
       <details style="margin-bottom: 0.75rem; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 0.75rem;">
         <summary style="color: #0f172a; font-weight: 600; cursor: pointer; font-size: 0.95rem; padding: 0.25rem 0; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-          무인 공간 AI 자동화란 무엇인가요?
+          스페이스데스크는 어떤 무인 공간에 적합한가요?
           <span style="color: #6d28d9; font-size: 1.2rem; flex-shrink: 0;">+</span>
         </summary>
-        <p style="color: #475569; margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.75;">무인 공간 AI 자동화는 파티룸, 스터디카페 등의 예약, 고객 응대, 매출 정산, 공간 모니터링을 AI가 자동으로 처리하는 기술입니다. 원그라운드는 실제 운영 현장 데이터를 기반으로 이 솔루션을 개발·검증합니다.</p>
+        <p style="color: #475569; margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.75;">파티룸, 스터디카페, 무인카페 등 소규모 1~3인 운영 사업장에 최적화되어 있습니다. 고객 문의가 반복되고 예약 확인 문자를 수동으로 발송하는 곳이라면 바로 적용 가능합니다.</p>
       </details>
       <details>
         <summary style="color: #0f172a; font-weight: 600; cursor: pointer; font-size: 0.95rem; padding: 0.25rem 0; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-          원그라운드 AI SaaS는 어떤 효과가 있나요?
+          스페이스데스크 도입 후 실제 효과는 어떻게 되나요?
           <span style="color: #6d28d9; font-size: 1.2rem; flex-shrink: 0;">+</span>
         </summary>
-        <p style="color: #475569; margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.75;">실증 데이터 기준 운영 시간 80% 절감, 운영 비용 40% 감소, 고객 재방문율 2.3배 향상을 달성했습니다. 현재 사전 예약 신청을 통해 얼리어답터 혜택을 누릴 수 있습니다.</p>
+        <p style="color: #475569; margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.75;">게임파티룸 밤샘 실증 데이터 기준, 반복 문의 자동화율 85%+, 수동 예약 문자 발송 0건, 노쇼율 60% 감소, 일일 운영 시간 80% 절감을 달성했습니다.</p>
       </details>
-    </div>
-
-    <!-- Case Cards -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.25rem;">
-      {cases.map((c, i) => (
-        <article
-          class={`card card-hover reveal reveal-delay-${(i % 4) + 1}`}
-          style="border-radius: 1.25rem; padding: 1.875rem; position: relative; overflow: hidden;"
-        >
-          <!-- Top color bar -->
-          <div style={`position: absolute; top: 0; left: 0; right: 0; height: 3px; background: ${c.accentColor}; border-radius: 1.25rem 1.25rem 0 0;`}></div>
-
-          <div style="margin-bottom: 1.25rem;">
-            <span style={`font-size: 0.72rem; font-weight: 700; color: ${c.categoryColor}; background: ${c.categoryBg}; border: 1px solid ${c.categoryBorder}; padding: 0.2rem 0.75rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.06em;`}>
-              {c.category}
-            </span>
-          </div>
-
-          <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; line-height: 1.4; margin-bottom: 0.875rem; letter-spacing: -0.015em;">{c.title}</h3>
-          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.7; margin-bottom: 1.5rem;">{c.desc}</p>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.06);">
-            {c.metrics.map(m => (
-              <div>
-                <div style={`font-size: 1.65rem; font-weight: 900; color: ${c.accentColor}; letter-spacing: -0.03em; line-height: 1;`}>
-                  <span data-count={m.value.replace(/[^0-9.]/g,'')} data-suffix={m.value.replace(/[0-9.]/g,'') + m.suffix}>
-                    {m.value}{m.suffix}
-                  </span>
-                </div>
-                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.3rem; font-weight: 500;">{m.label}</div>
-              </div>
-            ))}
-          </div>
-        </article>
-      ))}
     </div>
   </div>
 </section>
@@ -128,4 +158,7 @@ const cases = [
 <style>
   details summary::-webkit-details-marker { display: none; }
   details[open] summary span:last-child { transform: rotate(45deg); display: inline-block; transition: transform 0.2s; }
+  @media (max-width: 768px) {
+    div[style*="padding: 2.5rem 3rem"] { padding: 1.75rem 1.5rem !important; }
+  }
 </style>

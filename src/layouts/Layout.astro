@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = '원그라운드(One Ground) | AI 비즈니스 아키텍트 & SaaS 솔루션',
-  description = '현장의 문제를 AI로 해결합니다. 무인 공간 CRM·자동화 SaaS부터 AI 실무 강의까지—원그라운드가 공간 경영의 미래를 만듭니다.'
+  title = '스페이스데스크 | 무인 공간 AI CRM SaaS — 원그라운드(One Ground)',
+  description = '스페이스데스크가 지키는 동안, 당신은 쉬세요. 파티룸·스터디카페·무인카페 운영자를 위한 AI CRM — RAG 챗봇 문의응답·예약 문자 자동화·매출 관리를 하나로.'
 } = Astro.props;
 ---
 
@@ -18,7 +18,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="keywords" content="무인공간 AI,파티룸 자동화,공간 경영 SaaS,AI 비즈니스,원그라운드,AI 강의,DX 컨설팅" />
+    <meta name="keywords" content="스페이스데스크,무인공간 AI CRM,파티룸 자동화,스터디카페 CRM,무인카페 예약관리,AI 챗봇,예약 문자 자동화,원그라운드,무인 공간 챗봇,파티룸 자동화 솔루션" />
     <meta name="robots" content="index, follow" />
     
     <!-- Open Graph -->
@@ -77,23 +77,27 @@ const {
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "원그라운드 AI SaaS",
+        "name": "스페이스데스크 (SpaceDesk)",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "무인 공간(파티룸, 스터디카페) 운영자를 위한 AI 기반 CRM 및 업무 자동화 SaaS 솔루션. 예약 관리, 고객 응대, 매출 분석을 AI가 자동으로 처리합니다.",
+        "description": "무인 공간(파티룸, 스터디카페, 무인카페) 운영자를 위한 AI CRM SaaS. RAG 기반 챗봇 문의응답, 자동 예약 문자, 예약·고객 관리, 매출 관리를 하나로 자동화합니다.",
         "offers": {
           "@type": "Offer",
           "availability": "https://schema.org/PreOrder",
           "price": "0",
           "priceCurrency": "KRW",
-          "description": "현재 사전 예약 신청 진행 중"
+          "description": "스페이스데스크 무료 상담 사전 신청 진행 중"
         },
         "featureList": [
-          "AI 기반 예약 관리 자동화",
-          "고객 CRM 및 응대 자동화",
-          "매출 및 운영 데이터 분석 대시보드",
-          "실시간 공간 모니터링"
-        ]
+          "RAG 기반 문의응답 AI 챗봇 (카카오채널·인스타 DM·웹 위젯 멀티채널)",
+          "자동 예약 문자 발송 (카카오 알림톡·SMS/LMS)",
+          "예약 관리 및 고객 CRM 대시보드",
+          "결제 수단별 매출 관리 및 자동 정산 리포트"
+        ],
+        "brand": {
+          "@type": "Brand",
+          "name": "원그라운드 (One Ground)"
+        }
       }
     </script>
   </head>

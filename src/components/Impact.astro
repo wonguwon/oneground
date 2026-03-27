@@ -1,115 +1,136 @@
 ---
-const impacts = [
-  {
-    type: 'User Story',
-    badgeColor: '#4f46e5',
-    badgeBg: 'rgba(79,70,229,0.08)',
-    title: '강남 파티룸 "온" 점주',
-    content: '부업으로 운영 중인데, 원그라운드 AI 덕분에 본업 중에도 예약 응대 걱정이 사라졌습니다. 고객 만족도도 훨씬 높아졌어요.',
-    footer: '운영 시간 75% 감소',
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>`
-  },
-  {
-    type: 'YouTube',
-    badgeColor: '#ef4444',
-    badgeBg: 'rgba(239,68,68,0.08)',
-    title: 'IT 트렌드 채널 출연',
-    content: '구독자 10만 채널에서 무인 공간 AI 자동화의 미래를 소개했습니다. 1인 기업의 생산성 혁신에 대해 깊이 있게 다뤘습니다.',
-    footer: '조회수 5만회 달성',
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>`
-  },
-  {
-    type: 'Lecture',
-    badgeColor: '#d97706',
-    badgeBg: 'rgba(217,119,6,0.08)',
-    title: 'S기업 임원 특강',
-    content: '대기업 임원진을 대상으로 "생성형 AI 기반 비즈니스 효율화" 세션을 진행하며 현장 업무에 즉시 적용 가능한 전략을 전파했습니다.',
-    footer: '만족도 4.9/5.0',
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>`
-  },
-  {
-    type: 'User Story',
-    badgeColor: '#4f46e5',
-    badgeBg: 'rgba(79,70,229,0.08)',
-    title: '스터디카페 "더그라운드"',
-    content: '단순 반복 업무가 80% 줄어드니 신규 지점 확장과 마케팅에 에너지를 쏟을 수 있게 되었습니다. 성장의 확실한 파트너입니다.',
-    footer: '매출 35% 동반 상승',
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`
-  },
-  {
-    type: 'YouTube',
-    badgeColor: '#ef4444',
-    badgeBg: 'rgba(239,68,68,0.08)',
-    title: 'AI 아키텍트 인터뷰',
-    content: '퍼스널 브랜딩과 AI 도구 활용법을 다룬 인터뷰가 공개되었습니다. 기술을 넘어 비즈니스 가치를 만드는 법에 집중합니다.',
-    footer: '인기 급상승 영상 선정',
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`
-  },
-  {
-    type: 'Lecture',
-    badgeColor: '#d97706',
-    badgeBg: 'rgba(217,119,6,0.08)',
-    title: 'KDT AI 클래스 운영',
-    content: '국비지원 AI 교육 과정에서 파이썬 기반 자동화 툴 제작 실습을 리드하며, 50여 명의 예비 AI 실무자를 양성하고 있습니다.',
-    footer: '교육생 취업률 80% 목표',
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`
-  }
+const career = [
+  { year: '2015', title: '개발 시작', desc: '풀스택 개발자로 커리어 시작', color: '#94a3b8' },
+  { year: '2018', title: 'AI/ML 전환', desc: '머신러닝·딥러닝 전문화', color: '#6d28d9' },
+  { year: '2021', title: '기업 강의 시작', desc: '기업 DX 및 AI 실무 강의 진행', color: '#4f46e5' },
+  { year: '2022', title: 'KDT 부트캠프', desc: '국비지원 AI 교육 과정 리드', color: '#0891b2' },
+  { year: '2023', title: '파티룸 운영', desc: '게임파티룸 밤샘 직접 창업·운영', color: '#059669' },
+  { year: '2024', title: '스페이스데스크', desc: '밤샘 운영 데이터 기반 SaaS 개발', color: '#d97706' },
+];
+
+const lectures = [
+  { org: '대기업 임원 특강', type: '기업 DX', count: '임원진 대상', color: '#4f46e5', bg: 'rgba(79,70,229,0.07)', border: 'rgba(79,70,229,0.14)' },
+  { org: 'KDT AI 부트캠프', type: '국비 교육', count: '50명+ 수료', color: '#059669', bg: 'rgba(5,150,105,0.07)', border: 'rgba(5,150,105,0.14)' },
+  { org: '공공기관 AI 강의', type: '공공 교육', count: '다수 기관', color: '#d97706', bg: 'rgba(217,119,6,0.07)', border: 'rgba(217,119,6,0.14)' },
+  { org: '스타트업 DX 컨설팅', type: '컨설팅', count: '다수 프로젝트', color: '#0891b2', bg: 'rgba(8,145,178,0.07)', border: 'rgba(8,145,178,0.14)' },
 ];
 ---
 
-<section id="impact" style="padding: 8rem 1.5rem; background: #f8f9fc; position: relative; overflow: hidden;">
+<section id="trust" style="padding: 8rem 1.5rem; background: #f8f9fc; position: relative; overflow: hidden;">
   <div class="bg-dots" style="position: absolute; inset: 0; z-index: 0; opacity: 0.6;"></div>
-  
+
   <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
     <div class="reveal" style="text-align: center; margin-bottom: 4.5rem;">
-      <span class="section-label" style="display: inline-flex; margin-bottom: 1.25rem;">신뢰와 영향력</span>
+      <span class="section-label" style="display: inline-flex; margin-bottom: 1.25rem;">신뢰도</span>
       <h2 style="font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.15; margin-top: 1.25rem; color: #0f172a;">
-        검증된 전문성, <span class="gradient-text">현장의 증명</span>
+        직접 운영하며 검증했습니다
       </h2>
-      <p style="font-size: 1.1rem; color: #64748b; margin-top: 1rem; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7;">
-        운영자들의 생생한 후기부터 주요 매체 출연 정보까지,<br />원그라운드의 가치는 현장에서 만들어집니다.
+      <p style="font-size: 1.1rem; color: #64748b; margin-top: 1rem; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+        기술과 현장, 교육을 모두 아는 사람이 만든 솔루션입니다.<br />10년 개발 경력 위에 직접 파티룸을 운영하며 쌓은 실전 노하우.
       </p>
     </div>
 
-    <!-- Impact Cards Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
-      {impacts.map((item, i) => (
-        <article 
-          class={`card card-hover reveal reveal-delay-${(i % 3) + 1}`}
-          style="background: white; border-radius: 1.5rem; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;"
-        >
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
-              <span style={`font-size: 0.7rem; font-weight: 800; color: ${item.badgeColor}; background: ${item.badgeBg}; padding: 0.25rem 0.75rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;`}>
-                {item.type}
-              </span>
-              <div style={`color: ${item.badgeColor}; opacity: 0.8;`}>
-                <Fragment set:html={item.icon} />
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+
+      <!-- 파티룸 운영 스토리 -->
+      <div class="card reveal" style="border-radius: 1.75rem; overflow: hidden;">
+        <div style="padding: 2.25rem; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(109,40,217,0.35) 0%, transparent 70%); pointer-events: none;"></div>
+          <div style="position: relative; z-index: 1;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🎮</div>
+            <span style="font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em;">오프라인 운영 Lab</span>
+            <h3 style="font-size: 1.5rem; font-weight: 900; color: white; margin-top: 0.4rem; letter-spacing: -0.03em;">게임파티룸 밤샘</h3>
+            <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-top: 0.25rem;">스페이스데스크의 첫 번째 테스트베드</p>
+          </div>
+        </div>
+        <div style="padding: 2rem; background: white;">
+          <p style="font-size: 0.95rem; color: #475569; line-height: 1.8; margin-bottom: 1.5rem;">
+            직접 파티룸을 운영하며 고객 문의·예약·노쇼 문제를 직접 체감했습니다. 스페이스데스크를 자사 파티룸에 먼저 적용해 실제 운영 데이터를 기반으로 제품을 지속 개선하고 있습니다.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            {[
+              { num: '85', suffix: '%+', label: '문의 자동화율', color: '#4f46e5' },
+              { num: '0', suffix: '건', label: '수동 문자 발송', color: '#059669' },
+            ].map(s => (
+              <div style="text-align: center; padding: 1rem; background: #f8f9fc; border-radius: 0.875rem;">
+                <div style={`font-size: 1.75rem; font-weight: 900; color: ${s.color}; letter-spacing: -0.03em; line-height: 1;`}>
+                  <span data-count={s.num} data-suffix={s.suffix}>{s.num}{s.suffix}</span>
+                </div>
+                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.3rem; font-weight: 500;">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- 10년 경력 타임라인 -->
+      <div class="card reveal reveal-delay-1" style="border-radius: 1.75rem; padding: 2.25rem; background: white;">
+        <div style="margin-bottom: 1.75rem;">
+          <span style="font-size: 0.72rem; font-weight: 700; color: #6d28d9; background: rgba(109,40,217,0.08); border: 1px solid rgba(109,40,217,0.15); padding: 0.2rem 0.75rem; border-radius: 9999px; letter-spacing: 0.08em; text-transform: uppercase;">10년 개발 경력</span>
+          <h3 style="font-size: 1.35rem; font-weight: 900; color: #0f172a; margin-top: 0.5rem; letter-spacing: -0.03em;">👨‍💻 풀스택 AI 개발자</h3>
+          <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.25rem;">기업 DX 강의 · KDT 부트캠프 · AI 실무 솔루션 개발</p>
+        </div>
+
+        <!-- Timeline -->
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          {career.map((item, i) => (
+            <div style={`display: flex; gap: 1rem; align-items: flex-start; ${i < career.length - 1 ? 'padding-bottom: 1.125rem;' : ''}`}>
+              <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding-top: 0.2rem;">
+                <div style={`width: 10px; height: 10px; border-radius: 50%; background: ${item.color}; flex-shrink: 0;`}></div>
+                {i < career.length - 1 && <div style={`width: 2px; flex: 1; background: linear-gradient(to bottom, ${item.color}40, ${career[i+1].color}40); min-height: 24px; margin-top: 4px;`}></div>}
+              </div>
+              <div style="padding-bottom: 0.125rem;">
+                <div style="display: flex; align-items: center; gap: 0.625rem; margin-bottom: 0.1rem;">
+                  <span style={`font-size: 0.7rem; font-weight: 800; color: ${item.color}; letter-spacing: 0.06em;`}>{item.year}</span>
+                  <span style="font-size: 0.875rem; font-weight: 700; color: #0f172a;">{item.title}</span>
+                </div>
+                <p style="font-size: 0.8rem; color: #64748b;">{item.desc}</p>
               </div>
             </div>
-            
-            <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem; letter-spacing: -0.02em;">
-              {item.title}
-            </h3>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.7; margin-bottom: 1.5rem;">
-              "{item.content}"
-            </p>
-          </div>
+          ))}
+        </div>
+      </div>
+    </div>
 
-          <div style="padding-top: 1.25rem; border-top: 1px solid rgba(0,0,0,0.06); display: flex; align-items: center; gap: 0.5rem;">
-            <div style={`width: 8px; height: 8px; background: ${item.badgeColor}; border-radius: 50%;`}></div>
-            <span style="font-size: 0.85rem; font-weight: 700; color: #1e293b;">{item.footer}</span>
+    <!-- 강의 이력 -->
+    <div class="card reveal" style="border-radius: 1.75rem; padding: 2.25rem; background: white;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span style="font-size: 0.72rem; font-weight: 700; color: #d97706; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.18); padding: 0.2rem 0.75rem; border-radius: 9999px; letter-spacing: 0.08em; text-transform: uppercase;">강의 이력</span>
+          <h3 style="font-size: 1.35rem; font-weight: 900; color: #0f172a; margin-top: 0.5rem; letter-spacing: -0.03em;">🎓 다수 기관 AI 실무 강의</h3>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 2rem; font-weight: 900; color: #d97706; letter-spacing: -0.03em; line-height: 1;">
+            <span data-count="500" data-suffix="명+">500명+</span>
           </div>
-        </article>
-      ))}
+          <div style="font-size: 0.78rem; color: #94a3b8; font-weight: 500;">누적 수강생</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        {lectures.map((l, i) => (
+          <div
+            class={`reveal reveal-delay-${i + 1}`}
+            style={`padding: 1.25rem; background: ${l.bg}; border: 1px solid ${l.border}; border-radius: 1rem;`}
+          >
+            <span style={`font-size: 0.68rem; font-weight: 700; color: ${l.color}; text-transform: uppercase; letter-spacing: 0.08em;`}>{l.type}</span>
+            <p style="font-size: 0.925rem; font-weight: 700; color: #0f172a; margin-top: 0.25rem;">{l.org}</p>
+            <p style={`font-size: 0.8rem; color: ${l.color}; font-weight: 600; margin-top: 0.25rem;`}>{l.count}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  @media (max-width: 640px) {
-    div[style*="grid-template-columns"] {
+  @media (max-width: 900px) {
+    section#trust div[style*="grid-template-columns: 1fr 1fr"] {
       grid-template-columns: 1fr !important;
+    }
+  }
+  @media (max-width: 640px) {
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(200px"] {
+      grid-template-columns: 1fr 1fr !important;
     }
   }
 </style>

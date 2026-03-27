@@ -1,0 +1,97 @@
+---
+const techStack = [
+  { name: 'RAG', desc: '검색 증강 생성', color: '#4f46e5', bg: 'rgba(79,70,229,0.08)', border: 'rgba(79,70,229,0.15)' },
+  { name: 'LangChain', desc: 'AI 체인 오케스트레이션', color: '#059669', bg: 'rgba(5,150,105,0.08)', border: 'rgba(5,150,105,0.15)' },
+  { name: 'OpenAI GPT-4o', desc: '고성능 LLM 엔진', color: '#0891b2', bg: 'rgba(8,145,178,0.08)', border: 'rgba(8,145,178,0.15)' },
+  { name: 'Pinecone', desc: '벡터 데이터베이스', color: '#6d28d9', bg: 'rgba(109,40,217,0.08)', border: 'rgba(109,40,217,0.15)' },
+  { name: '카카오 알림톡', desc: '예약 문자 자동 발송', color: '#d97706', bg: 'rgba(217,119,6,0.08)', border: 'rgba(217,119,6,0.15)' },
+  { name: 'NHN Cloud SMS', desc: 'SMS/LMS 발송', color: '#ef4444', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.15)' },
+  { name: 'Astro', desc: '프론트엔드 프레임워크', color: '#f97316', bg: 'rgba(249,115,22,0.08)', border: 'rgba(249,115,22,0.15)' },
+  { name: 'Vercel', desc: '글로벌 배포 & CDN', color: '#334155', bg: 'rgba(51,65,85,0.08)', border: 'rgba(51,65,85,0.15)' },
+];
+
+const stats = [
+  { num: '500', suffix: '명+', label: '누적 강의 수강생', icon: '🎓', color: '#4f46e5' },
+  { num: '10', suffix: '년', label: '개발 경력', icon: '👨‍💻', color: '#059669' },
+  { num: '85', suffix: '%+', label: '문의 자동화율', icon: '🤖', color: '#d97706' },
+  { num: '100', suffix: '건', label: '사전 신청 목표', icon: '🚀', color: '#0891b2' },
+];
+---
+
+<section id="partners" style="padding: 8rem 1.5rem; background: #ffffff; position: relative; overflow: hidden;">
+  <div class="orb" style="width: 500px; height: 500px; top: -5%; right: -8%; background: radial-gradient(circle, rgba(109,40,217,0.07) 0%, transparent 70%);"></div>
+
+  <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+    <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
+      <span class="section-label" style="display: inline-flex; margin-bottom: 1.25rem;">기술 스택 & 성과</span>
+      <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.15; margin-top: 1.25rem; color: #0f172a;">
+        검증된 기술로 만든 <span class="gradient-text">실전 솔루션</span>
+      </h2>
+      <p style="font-size: 1.05rem; color: #64748b; margin-top: 1rem; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+        최신 AI 기술 스택과 10년 개발 경력이 결합된 스페이스데스크.
+      </p>
+    </div>
+
+    <!-- Stats Row -->
+    <div
+      class="reveal"
+      style="
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        background: white;
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+        overflow: hidden;
+        margin-bottom: 3rem;
+      "
+    >
+      {stats.map((s, i) => (
+        <div style={`text-align: center; padding: 1.75rem 1.5rem; ${i < stats.length - 1 ? 'border-right: 1px solid rgba(0,0,0,0.07);' : ''}`}>
+          <div style="font-size: 1.35rem; margin-bottom: 0.35rem;">{s.icon}</div>
+          <div style={`font-size: 2rem; font-weight: 900; color: ${s.color}; letter-spacing: -0.03em; line-height: 1;`}>
+            <span data-count={s.num} data-suffix={s.suffix}>{s.num}{s.suffix}</span>
+          </div>
+          <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.4rem; font-weight: 500;">{s.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="card reveal" style="border-radius: 1.75rem; padding: 2.5rem; background: white;">
+      <div style="margin-bottom: 1.75rem;">
+        <span style="font-size: 0.72rem; font-weight: 700; color: #6d28d9; background: rgba(109,40,217,0.08); border: 1px solid rgba(109,40,217,0.15); padding: 0.2rem 0.75rem; border-radius: 9999px; letter-spacing: 0.08em; text-transform: uppercase;">기술 스택</span>
+        <h3 style="font-size: 1.25rem; font-weight: 900; color: #0f172a; margin-top: 0.5rem; letter-spacing: -0.02em;">스페이스데스크를 구성하는 핵심 기술</h3>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.875rem;">
+        {techStack.map((t, i) => (
+          <div
+            class={`reveal reveal-delay-${(i % 4) + 1}`}
+            style={`padding: 1rem 1.125rem; background: ${t.bg}; border: 1px solid ${t.border}; border-radius: 0.875rem; transition: transform 0.2s ease;`}
+            onmouseover="this.style.transform='translateY(-2px)'"
+            onmouseout="this.style.transform=''"
+          >
+            <p style={`font-size: 0.875rem; font-weight: 800; color: ${t.color}; letter-spacing: -0.01em;`}>{t.name}</p>
+            <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.2rem;">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+    div[style*="grid-template-columns: repeat(4, 1fr)"] > div:nth-child(2) {
+      border-right: none !important;
+    }
+    div[style*="grid-template-columns: repeat(4, 1fr)"] > div:nth-child(1),
+    div[style*="grid-template-columns: repeat(4, 1fr)"] > div:nth-child(2) {
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+  }
+</style>
